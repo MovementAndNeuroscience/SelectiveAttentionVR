@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\FileSaver.cs" />
-    <Compile Include="Assets\Scripts\ActiveFieldAtStartUp.cs" />
     <Compile Include="Assets\Scripts\StimuliController.cs" />
+    <Compile Include="Assets\Scripts\ActivateExperiment.cs" />
+    <Compile Include="Assets\Scripts\ActiveFieldAtStartUp.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
-    <Compile Include="Assets\ActivateExperiment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GameReadyAssets\FurniturePack1\Shader\SurfaceMetallicSmoothnessAmbient.shader" />
