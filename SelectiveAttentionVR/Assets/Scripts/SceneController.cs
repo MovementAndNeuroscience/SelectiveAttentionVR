@@ -7,7 +7,10 @@ public class SceneController : MonoBehaviour
     public GameObject subjectIdTextField;
     public GameObject InsertSubIdText;
     public GameObject StimuliController;
+    public GameObject audioStimuliController;
+    public GameObject visualaudioStimuliController;
     public GameObject introtext;
+    public GameObject pause; 
     public GameObject p_target;
     public GameObject b_target;
     public GameObject p_distractor;
@@ -27,10 +30,12 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         StimuliController.SetActive(false);
+        audioStimuliController.SetActive(false);
+        visualaudioStimuliController.SetActive(false);
         subjectIdTextField.SetActive(true);
         InsertSubIdText.SetActive(true);
         introtext.SetActive(false);
-
+        pause.SetActive(false); 
         p_target.SetActive(false);
         b_target.SetActive(false);
         p_distractor.SetActive(false);
@@ -51,7 +56,7 @@ public class SceneController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            var textField = subjectIdTextField.GetComponent<InputField>();
+            var textField = subjectIdTextField.GetComponent<TMPro.TMP_InputField>();
             subjectId = textField.text;
 
             subjectIdTextField.SetActive(false);

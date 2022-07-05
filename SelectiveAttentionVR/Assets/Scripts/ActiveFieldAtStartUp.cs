@@ -8,7 +8,7 @@ public class ActiveFieldAtStartUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var inputfield = GetComponent<InputField>();
+        var inputfield = GetComponent<TMPro.TMP_InputField>();
         inputfield.ActivateInputField();
     }
 

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class StimuliController : MonoBehaviour
@@ -7,7 +6,10 @@ public class StimuliController : MonoBehaviour
     private float timer = 0.0f;
     private float grandClock = 0.0f;
     private bool reactionTimeEnabled = true;
-    private bool insertOnsetTime = true;
+    private bool enableStimuli = true;
+    private bool enableFeedback = true;
+    private bool enableBlankScreen = true;
+    private bool enableFixation = true; 
     private int stimuliCounter = 0;
     private bool allReactionTimesFound = false;
     private Vector2 distractorPos = new Vector2(0.0f, 400.0f);
@@ -23,6 +25,9 @@ public class StimuliController : MonoBehaviour
     private int allowedPCongruence = 2;
     private string targetLetter = "g";
     private string distractorLetter = "g";
+
+    private bool enableHappy = false;
+    private bool enableSad = false; 
 
     public GameObject p_target;
     public GameObject b_target;
@@ -82,34 +87,32 @@ public class StimuliController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (allReactionTimesFound)
-        {
-            timer = 6.5f; 
-        }
 
         timer += Time.fixedDeltaTime;
         grandClock += Time.fixedDeltaTime;
 
-        if (timer > 0.0f && timer < 1.0f)
+        if (timer > 0.0f && timer < 1.0f && enableFixation)
         {
+            fillerposes.Clear();   
             fillerposes.Add("UpLeft");
             fillerposes.Add("DownLeft");
             fillerposes.Add("UpRight");
             fillerposes.Add("DownRight");
 
-            x_fixation.SetActive(true); 
+            x_fixation.SetActive(true);
+            enableFixation = false; 
         }
 
-        else if (timer > 1.0f && timer < 1.5f)
+        else if (timer > 1.0f && timer < 1.5f && enableStimuli)
         {
             x_fixation.SetActive(false);
 
-            var randpos = Random.Range(0, fillerposes.Count - 1);
+            var randpos = Random.Range(0, fillerposes.Count);
             var targetpos = fillerposes[randpos];
             var targetPostiionVector = getPositionTarget(targetpos);
             fillerposes.Remove(targetpos);
 
-            var condition_control = FindTargetAndDistractor(allowedPCongruence, allowedPIncongruence, allowedPNeutral, allowedBCongruence,
+            var condition_control = GetComponent<StimuliControllerHelper>().FindTargetAndDistractor(allowedPCongruence, allowedPIncongruence, allowedPNeutral, allowedBCongruence,
                 allowedBIncongruence, allowedBNeutral, presentedConditions, targets, distractors, stimuliCounter);
 
             allowedPCongruence = condition_control.allowedPCongruence;
@@ -124,41 +127,30 @@ public class StimuliController : MonoBehaviour
 
             PositionningTargetAndDistractor(targetPostiionVector);
             PositioningFillers();
+            stimuliOnsetTimes[stimuliCounter] = grandClock;
+            enableStimuli = false; 
 
         }
-        else if (timer > 1.5f && timer < 5.5f)
+        else if (timer > 1.5f && timer < 5.5f && enableBlankScreen)
         {
-
-            //reactionTimeEnabled = true;
-            //insertOnsetTime = true; 
-
-            //gameObject.GetComponent<MeshRenderer>().material = pausematerial;
-            //if (stimuliOffsetTimes[reactionTimeCounter -1] == 0 && stimuliTimes[reactionTimeCounter -1] == 0)
-            //{
-            //    stimuliOffsetTimes[reactionTimeCounter -1] = gr&&Clock;
-            //    stimuliTimes[reactionTimeCounter -1] = stimuliOffsetTimes[reactionTimeCounter -1] - stimuliOnsetTimes[reactionTimeCounter -1];
-                
-            //}
-            //if(reactionTimeCounter == maxReactiontimes)
-            //{
-            //    allReactionTimesFound = true;
-            //}
-
-        }
-        if(timer > 1.0f && timer < 5.5f)
-        {
-            // Record input right or left click from mouse 
+            ShowBlankScreen();
         }
 
-        else if (timer > 5.5f && timer < 6.0f)
+        if (timer > 1.0f && timer < 5.5f && reactionTimeEnabled)
         {
-            // provide feedback based on reaction 
-
-
-
+            RecordReaction();
         }
-        else if (timer > 6.0f)
+
+        else if (timer > 5.5f && timer < 6.0f && enableFeedback)
         {
+            ProvideFeedback();
+        }
+        else if (timer > 6.0f && !allReactionTimesFound)
+        {
+            faster.SetActive(false);
+            happyFace.SetActive(false); 
+            sadFace.SetActive(false);
+
             stimuliCounter ++;
             if(maxReactiontimes == stimuliCounter)
             {
@@ -166,85 +158,90 @@ public class StimuliController : MonoBehaviour
             }
 
             if (!allReactionTimesFound)
-            timer = 0.00f;
+            {
+                timer = 0.00f;
+                reactionTimeEnabled = true;
+                enableFeedback = true;
+                enableBlankScreen = true;
+                enableStimuli = true;
+                enableFixation = true;
+                enableSad = false;
+                enableHappy = false;
+            }
+            
+            if (allReactionTimesFound)
+            {
+                timer = 6.5f;
+            }
+        }
+    }
+
+    private void ProvideFeedback()
+    {
+        if (!enableHappy && !enableSad)
+        {
+            answer_codes[stimuliCounter] = 0;
+            faster.SetActive(true);
+        }
+        else if (enableHappy)
+        {
+            happyFace.SetActive(true);
+        }
+        else if (enableSad)
+        {
+            sadFace.SetActive(true);
         }
 
+        enableFeedback = false;
+    }
+
+    private void RecordReaction()
+    {
+        (enableHappy, enableSad, reactionTimes, answers, answer_codes, reactionTimeEnabled) = 
+            GetComponent<StimuliControllerHelper>().RecordReaction(targetLetter, enableHappy, enableSad, reactionTimes,
+            stimuliOnsetTimes, stimuliCounter, grandClock, answers, answer_codes, reactionTimeEnabled);
+    }
+
+    private void ShowBlankScreen()
+    {
+        (stimuliOffsetTimes, stimuliTimes, enableBlankScreen) = GetComponent<StimuliControllerHelper>().ShowBlankScreen(p_target, b_target, p_distractor,
+        b_distractor, g_distractor, h_filler, l_filler, y_filler, stimuliOffsetTimes, stimuliOnsetTimes, stimuliTimes, stimuliCounter, grandClock);
     }
 
     private void PositioningFillers()
     {
-        var randomPosition = new System.Random();
-        fillerposes = fillerposes.OrderBy(a => randomPosition.Next()).ToList();
-
-        var randomFiller = new System.Random();
-        fillers = fillers.OrderBy(a => randomPosition.Next()).ToList();
-
-        for (int i = 0; i <= 2; i++)
-        {
-            if (fillers[i] == "h" && fillerposes[i] == "UpLeft")
-            {
-                h_filler.transform.position = new Vector3(filler_up_left_pos.x, filler_up_left_pos.y);
-            }
-            else if (fillers[i] == "h" && fillerposes[i] == "DownLeft")
-            {
-                h_filler.transform.position = new Vector3(filler_low_left_pos.x, filler_low_left_pos.y);
-            }
-            else if (fillers[i] == "h" && fillerposes[i] == "UpRight")
-            {
-                h_filler.transform.position = new Vector3(filler_up_right_pos.x, filler_up_right_pos.y);
-            }
-            else if (fillers[i] == "h" && fillerposes[i] == "DownRight")
-            {
-                h_filler.transform.position = new Vector3(filler_low_right_pos.x, filler_low_right_pos.y);
-            }
-            else if (fillers[i] == "l" && fillerposes[i] == "UpLeft")
-            {
-                l_filler.transform.position = new Vector3(filler_up_left_pos.x, filler_up_left_pos.y);
-            }
-            else if (fillers[i] == "l" && fillerposes[i] == "DownLeft")
-            {
-                l_filler.transform.position = new Vector3(filler_low_left_pos.x, filler_low_left_pos.y);
-            }
-            else if (fillers[i] == "l" && fillerposes[i] == "UpRight")
-            {
-                l_filler.transform.position = new Vector3(filler_up_right_pos.x, filler_up_right_pos.y);
-            }
-            else if (fillers[i] == "l" && fillerposes[i] == "DownRight")
-            {
-                l_filler.transform.position = new Vector3(filler_low_right_pos.x, filler_low_right_pos.y);
-            }
-            else if (fillers[i] == "y" && fillerposes[i] == "UpLeft")
-            {
-                l_filler.transform.position = new Vector3(filler_up_left_pos.x, filler_up_left_pos.y);
-            }
-            else if (fillers[i] == "y" && fillerposes[i] == "DownLeft")
-            {
-                l_filler.transform.position = new Vector3(filler_low_left_pos.x, filler_low_left_pos.y);
-            }
-            else if (fillers[i] == "y" && fillerposes[i] == "UpRight")
-            {
-                l_filler.transform.position = new Vector3(filler_up_right_pos.x, filler_up_right_pos.y);
-            }
-            else if (fillers[i] == "y" && fillerposes[i] == "DownRight")
-            {
-                l_filler.transform.position = new Vector3(filler_low_right_pos.x, filler_low_right_pos.y);
-            }
-        }
+        GetComponent<StimuliControllerHelper>().PositioningFillers(fillerposes, fillers, h_filler, y_filler, l_filler, 
+            filler_up_left_pos, filler_low_left_pos, filler_up_right_pos, filler_low_right_pos); 
     }
 
     private void PositionningTargetAndDistractor(Vector2 targetPostiionVector)
     {
         if (targetLetter == "p")
-            p_target.transform.position = new Vector3(targetPostiionVector.x, targetPostiionVector.y);
+        {
+            p_target.SetActive(true);
+            p_target.GetComponent<RectTransform>().anchoredPosition = targetPostiionVector;
+        }
         else if (targetLetter == "b")
-            b_target.transform.position = new Vector3(targetPostiionVector.x, targetPostiionVector.y);
+        {
+            b_target.SetActive(true);
+            b_target.GetComponent<RectTransform>().anchoredPosition = targetPostiionVector;
+        }
 
         if (distractorLetter == "p")
-            p_distractor.transform.position = new Vector3(distractorPos.x, distractorPos.y);
+        {
+            p_distractor.SetActive(true);
+            p_distractor.GetComponent<RectTransform>().anchoredPosition = distractorPos;
+        }
         else if (distractorLetter == "b")
-            b_distractor.transform.position = new Vector3(distractorPos.x, distractorPos.y);
+        {
+            b_distractor.SetActive(true);
+            b_distractor.GetComponent<RectTransform>().anchoredPosition = distractorPos;
+        }
         else if (distractorLetter == "g")
-            g_distractor.transform.position = new Vector3(distractorPos.x, distractorPos.y);
+        {
+            g_distractor.SetActive(true);
+            g_distractor.GetComponent<RectTransform>().anchoredPosition = distractorPos;
+        }
     }
 
     private Vector2 getPositionTarget(string targetpos)
@@ -262,150 +259,21 @@ public class StimuliController : MonoBehaviour
             default: return new Vector2(0.0f,0.0f);
         }
     }
-    private Condition_Controller FindTargetAndDistractor(int allowedPCongruence, int allowedPIncongruence, int allowedPNeutral, int allowedBCongruence, int allowedBIncongruence, int allowedBNeutral, string[] presentedConditions, List<string> targets, List<string> distractors, int stimuliTimeCounter)
-    {
-        var targetIndex = Random.Range(0, targets.Count - 1);
-        var tar = targets[targetIndex];
-        Condition_Controller tarAndDist = FindDistractor( tar, allowedPCongruence,  allowedPIncongruence, allowedPNeutral, allowedBCongruence, allowedBIncongruence, allowedBNeutral, presentedConditions, distractors, stimuliTimeCounter);
-        return tarAndDist;
-    }
-
-    private Condition_Controller FindDistractor(string target, int allowedPCongruence, int allowedPIncongruence, int allowedPNeutral, int allowedBCongruence, int allowedBIncongruence, int allowedBNeutral, string[] presentedConditions, List<string> distractors, int stimuliTimeCounter)
-        {
-        var distractorIndex = Random.Range(0, distractors.Count - 1);
-        var dist = distractors[distractorIndex];
-
-        if (target == "p" && dist == "p" && allowedPCongruence > 0)
-        {
-            allowedPCongruence = allowedPCongruence - 1;
-            presentedConditions[stimuliTimeCounter] = "Congruent";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-
-        }
-
-        else if (target == "p" && dist == "b" && allowedPIncongruence > 0)
-        {
-            allowedPIncongruence = allowedPIncongruence - 1;
-            presentedConditions[stimuliTimeCounter] = "Incongruent";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-        }
-        else if (target == "p" && dist == "g" && allowedPNeutral > 0)
-        {
-            allowedPNeutral = allowedPNeutral - 1;
-            presentedConditions[stimuliTimeCounter] = "Neutral";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-        }
-        else if (target == "b" && dist == "p" && allowedBIncongruence > 0)
-        {
-
-            allowedBIncongruence = allowedBIncongruence - 1;
-            presentedConditions[stimuliTimeCounter] = "Incongruent";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-        }
-        else if (target == "b" && dist == "b" && allowedBCongruence > 0)
-        {
-            allowedBCongruence = allowedBCongruence - 1;
-            presentedConditions[stimuliTimeCounter] = "Congruent";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-        }
-        else if (target == "b" && dist == "g" && allowedBNeutral > 0)
-        {
-            allowedBNeutral = allowedBNeutral - 1;
-            presentedConditions[stimuliTimeCounter] = "Neutral";
-            return new Condition_Controller
-            {
-                target = target,
-                distractor = dist,
-                allowedPCongruence = allowedPCongruence,
-                allowedPIncongruence = allowedPIncongruence,
-                allowedPNeutral = allowedPNeutral,
-                allowedBCongruence = allowedBCongruence,
-                allowedBIncongruence = allowedBIncongruence,
-                allowedBNeutral = allowedBNeutral,
-                presentedConditions = presentedConditions,
-            };
-        }
-        else
-        {
-            var targetIndex = Random.Range(0, targets.Count - 1);
-            var tar = targets[targetIndex];
-            return FindDistractor(tar, allowedPCongruence, allowedPIncongruence, allowedPNeutral, allowedBCongruence, allowedBIncongruence, allowedBNeutral, presentedConditions, distractors, stimuliTimeCounter);
-        }
-    }
-
+    
     public bool AllReactionTimesFound()
-    {
-        return allReactionTimesFound; 
-    }
+    {return allReactionTimesFound;}
     public float[] GetRTs()
-    {
-        return reactionTimes; 
-    }
+    {return reactionTimes;}
     public float[] GetOnSetTimes()
-    {
-        return stimuliOnsetTimes;
-    }
+    { return stimuliOnsetTimes;}
     public float[] GetOffSetTimes()
-    {
-        return stimuliOffsetTimes;
-    }
+    {return stimuliOffsetTimes;}
     public float[] GetStimuliScreenTimes()
-    {
-        return stimuliTimes;
-    }
+    {return stimuliTimes;}
+    public string[] GetPresentedConditions()
+    { return presentedConditions;}
+    public string[] GetAnswers()
+    { return answers;}
+    public int[] GetAnswerCodes()
+    { return answer_codes;}
 }
