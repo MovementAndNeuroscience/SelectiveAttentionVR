@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2021_3_1;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;USE_SEARCH_EXTENSION_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2021_3_1;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;USE_SEARCH_EXTENSION_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -49,7 +49,7 @@
     <UnityProjectGenerator>Package</UnityProjectGenerator>
     <UnityProjectGeneratorVersion>2.0.14</UnityProjectGeneratorVersion>
     <UnityProjectType>Editor:5</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2021.3.1f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -325,6 +325,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.1f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
@@ -337,17 +340,14 @@
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -996,14 +996,6 @@
       <Project>{53C6B1E2-12C0-B67B-A869-EFB6462063E8}</Project>
       <Name>Unity.InternalAPIEngineBridge.007</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.Voice.Demo.csproj">
-      <Project>{2026E437-7C08-7113-A2BE-A798116FEA85}</Project>
-      <Name>Oculus.Voice.Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
-      <Project>{B43B63A3-B464-BF8E-139E-7CC765A62B43}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.csproj">
       <Project>{C55AAC22-337C-5B07-B8EF-BA0C770860D9}</Project>
       <Name>Oculus.Interaction</Name>
@@ -1020,9 +1012,9 @@
       <Project>{ECF889F5-670E-411C-A2D3-8D3A3308609F}</Project>
       <Name>Oculus.AudioManager.Utils.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARCore.Editor.csproj">
-      <Project>{CF234E90-A5F0-527A-FF52-F40B745206DA}</Project>
-      <Name>Unity.XR.ARCore.Editor</Name>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
+      <Project>{B43B63A3-B464-BF8E-139E-7CC765A62B43}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{60865BF0-C9D0-2EED-7E9B-761DD9DB1BBD}</Project>
@@ -1060,10 +1052,6 @@
       <Project>{CDC70502-C940-C89C-79FB-7DA828095D4E}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.MockHMD.csproj">
-      <Project>{C0361186-E628-6AE0-34C9-1DC8837BB95E}</Project>
-      <Name>Unity.XR.MockHMD</Name>
-    </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
       <Project>{04E57890-03F8-C2C1-287F-A8AE9554EEA1}</Project>
       <Name>Oculus.VR</Name>
@@ -1072,10 +1060,6 @@
       <Project>{C0DDABF0-95B2-6BAF-F118-25BB6F5D0A9B}</Project>
       <Name>Oculus.AudioManager.Audio.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARSubsystems.Editor.csproj">
-      <Project>{FD3787F3-70EE-AC8D-022E-9C8838ABBF65}</Project>
-      <Name>Unity.XR.ARSubsystems.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.Editor.csproj">
       <Project>{3619BE99-347A-8774-CBE5-A40852F58965}</Project>
       <Name>Oculus.Spatializer.Editor</Name>
@@ -1083,14 +1067,6 @@
     <ProjectReference Include="Unity.XR.Management.csproj">
       <Project>{CF666099-E4F2-B47F-D26E-47577485CEFC}</Project>
       <Name>Unity.XR.Management</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARCore.csproj">
-      <Project>{0914A527-FD95-C1F0-A43D-E26013AA1AB6}</Project>
-      <Name>Unity.XR.ARCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARSubsystems.csproj">
-      <Project>{9B52A0AD-A569-4FA5-A2B0-91C5FC9C9E3A}</Project>
-      <Name>Unity.XR.ARSubsystems</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Oculus.Editor.csproj">
       <Project>{64B4624D-2B41-FC6F-E638-AC27EEB0DD14}</Project>
@@ -1168,10 +1144,6 @@
       <Project>{5328DD56-8B75-7BEA-2D40-BF7714D1A2F2}</Project>
       <Name>Unity.XR.OpenXR.Features.OculusQuestSupport</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.XR.MockHMD.Editor.csproj">
-      <Project>{3BBE3E51-4D1D-1765-26D2-D20FDE94B5B9}</Project>
-      <Name>Unity.XR.MockHMD.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Tutorials.Core.Editor.csproj">
       <Project>{73334DE9-8CAB-6F31-FA83-FA73FE63C066}</Project>
       <Name>Unity.Tutorials.Core.Editor</Name>
@@ -1212,10 +1184,6 @@
       <Project>{6F3AAC47-341F-D37E-76F4-8D5C576409CE}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Oculus.LipSync.Editor.csproj">
-      <Project>{26FA0B7C-B703-8445-9FF4-73649FC2A491}</Project>
-      <Name>Oculus.LipSync.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
       <Project>{AD4FF6D9-D242-4AC0-F592-A1ABC85E4669}</Project>
       <Name>Oculus.Platform</Name>
@@ -1223,10 +1191,6 @@
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
       <Project>{D2922A88-0378-AB16-2720-54F522C82191}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.LipSync.csproj">
-      <Project>{7BB855E2-A081-E2EF-7DBE-044992264C8B}</Project>
-      <Name>Oculus.LipSync</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.OpenXR.csproj">
       <Project>{D6420BBD-BD3C-7A38-0FAE-648E05A066B1}</Project>

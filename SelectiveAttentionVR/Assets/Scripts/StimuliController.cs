@@ -103,7 +103,7 @@ public class StimuliController : MonoBehaviour
             enableFixation = false; 
         }
 
-        else if (timer > 1.0f && timer < 1.5f && enableStimuli)
+        else if (timer > 1.0f && timer < 1.2f && enableStimuli)
         {
             x_fixation.SetActive(false);
 
@@ -131,21 +131,21 @@ public class StimuliController : MonoBehaviour
             enableStimuli = false; 
 
         }
-        else if (timer > 1.5f && timer < 5.5f && enableBlankScreen)
+        else if (timer > 1.2f && timer < 5.2f && enableBlankScreen)
         {
             ShowBlankScreen();
         }
 
-        if (timer > 1.0f && timer < 5.5f && reactionTimeEnabled)
+        if (timer > 1.0f && timer < 5.2f && reactionTimeEnabled)
         {
             RecordReaction();
         }
 
-        else if (timer > 5.5f && timer < 6.0f && enableFeedback)
+        else if (timer > 5.2f && timer < 5.7f && enableFeedback)
         {
             ProvideFeedback();
         }
-        else if (timer > 6.0f && !allReactionTimesFound)
+        else if (timer > 5.7f && !allReactionTimesFound)
         {
             faster.SetActive(false);
             happyFace.SetActive(false); 
@@ -181,6 +181,7 @@ public class StimuliController : MonoBehaviour
         if (!enableHappy && !enableSad)
         {
             answer_codes[stimuliCounter] = 0;
+            answers[stimuliCounter] = "None"; 
             faster.SetActive(true);
         }
         else if (enableHappy)

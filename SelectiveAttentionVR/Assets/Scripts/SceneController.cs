@@ -26,6 +26,10 @@ public class SceneController : MonoBehaviour
 
     public string subjectId;
 
+    private bool enableIntroText = true;
+    private bool enableFirstPause = true;
+    private bool enableSecondPause = true; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +58,7 @@ public class SceneController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && enableIntroText)
         {
             var textField = subjectIdTextField.GetComponent<TMPro.TMP_InputField>();
             subjectId = textField.text;
@@ -62,19 +66,51 @@ public class SceneController : MonoBehaviour
             subjectIdTextField.SetActive(false);
             InsertSubIdText.SetActive(false);
             introtext.SetActive(true);
+            enableIntroText = false; 
+        }
+        else if(StimuliController.GetComponent<StimuliController>().AllReactionTimesFound() && enableFirstPause)
+        {
+           pause.SetActive(true);
+           enableFirstPause = false;
+            StimuliController.SetActive(false);  
+        }
+        else if (visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().AllReactionTimesFound() && enableSecondPause)
+        {
+            pause.SetActive(true);
+            enableSecondPause = false;
+            visualaudioStimuliController.SetActive(false);
         }
 
-        if (StimuliController.GetComponent<StimuliController>().AllReactionTimesFound())
+        if (StimuliController.GetComponent<StimuliController>().AllReactionTimesFound() && visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().AllReactionTimesFound() && audioStimuliController.GetComponent<AudioStimuliController>().AllReactionTimesFound())
         {
-            var rTs = StimuliController.GetComponent<StimuliController>().GetRTs();
-            var onsetTimes = StimuliController.GetComponent<StimuliController>().GetOnSetTimes();
-            var offsetTimes = StimuliController.GetComponent<StimuliController>().GetOffSetTimes();
-            var stimuliOnScreenTimes = StimuliController.GetComponent<StimuliController>().GetStimuliScreenTimes();
+            var visRTs = StimuliController.GetComponent<StimuliController>().GetRTs();
+            var visOnsetTimes = StimuliController.GetComponent<StimuliController>().GetOnSetTimes();
+            var visOffsetTimes = StimuliController.GetComponent<StimuliController>().GetOffSetTimes();
+            var visStimuliOnScreenTimes = StimuliController.GetComponent<StimuliController>().GetStimuliScreenTimes();
+            var visPresentedConditions = StimuliController.GetComponent<StimuliController>().GetPresentedConditions();
+            var visAnswers = StimuliController.GetComponent<StimuliController>().GetAnswers();
+            var visAnswerCodes = StimuliController.GetComponent<StimuliController>().GetAnswerCodes();
 
-            GetComponent<FileSaver>().saveFile(subjectId, rTs, onsetTimes, offsetTimes, stimuliOnScreenTimes);
+            var audVisRTs = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetRTs();
+            var audVisOnsetTimes = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetOnSetTimes();
+            var audVisOffsetTimes = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetOffSetTimes();
+            var audVisStimuliOnScreenTimes = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetStimuliScreenTimes();
+            var audVisPresentedConditions = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetPresentedConditions();
+            var audVisAnswers = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetAnswers();
+            var audVisAnswerCodes = visualaudioStimuliController.GetComponent<AudioVisualStimuliController>().GetAnswerCodes();
 
-            // Application.Quit() does not work in the editor so
-            // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+            var audRTs = audioStimuliController.GetComponent<AudioStimuliController>().GetRTs();
+            var audOnsetTimes = audioStimuliController.GetComponent<AudioStimuliController>().GetOnSetTimes();
+            var audOffsetTimes = audioStimuliController.GetComponent<AudioStimuliController>().GetOffSetTimes();
+            var audStimuliOnScreenTimes = audioStimuliController.GetComponent<AudioStimuliController>().GetStimuliScreenTimes();
+            var audPresentedConditions = audioStimuliController.GetComponent<AudioStimuliController>().GetPresentedConditions();
+            var audAnswers = audioStimuliController.GetComponent<AudioStimuliController>().GetAnswers();
+            var audanswerCodes = audioStimuliController.GetComponent<AudioStimuliController>().GetAnswerCodes();
+
+            GetComponent<FileSaver>().saveFile(subjectId, visRTs, visOnsetTimes, visOffsetTimes, visStimuliOnScreenTimes, visPresentedConditions, visAnswers, visAnswerCodes,
+                audVisRTs, audVisOnsetTimes, audVisOffsetTimes, audVisStimuliOnScreenTimes, audVisPresentedConditions, audVisAnswers, audVisAnswerCodes,
+                audRTs, audOnsetTimes, audOffsetTimes, audStimuliOnScreenTimes, audPresentedConditions, audAnswers, audanswerCodes);
+
 #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
 #else
