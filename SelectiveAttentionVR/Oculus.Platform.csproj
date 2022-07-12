@@ -77,8 +77,8 @@
     <Compile Include="Assets\Oculus\Platform\Scripts\ChallengeViewerFilter.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\PlatformManager.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\NetSyncSessionsChangedNotification.cs" />
-    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Purchase.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\ServiceProvider.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Purchase.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\RichPresenceExtraContext.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\NetSyncSetSessionPropertyResult.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\RichPresenceOptions.cs" />
@@ -151,8 +151,8 @@
     <Compile Include="Assets\Oculus\Platform\Scripts\BufferedAudioStream.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageUpdateResponse.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\NetworkingPeer.cs" />
-    <Compile Include="Assets\Oculus\Platform\Scripts\PlatformInternal.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\Models\NetSyncConnection.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PlatformInternal.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\LivestreamingMicrophoneStatus.cs" />
     <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\PlatformManager.cs" />
     <Compile Include="Assets\Oculus\Platform\Scripts\RoomJoinPolicy.cs" />

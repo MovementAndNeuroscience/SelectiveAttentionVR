@@ -984,6 +984,10 @@
       <Project>{C07D9653-32FC-48A1-F252-3E92F771CEBC}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Oculus.Voice.Demo.csproj">
+      <Project>{2026E437-7C08-7113-A2BE-A798116FEA85}</Project>
+      <Name>Oculus.Voice.Demo</Name>
+    </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.csproj">
       <Project>{DFDA4AB5-9CA8-4D16-F2F6-69E41741078B}</Project>
       <Name>Oculus.AudioManager</Name>
@@ -995,6 +999,10 @@
     <ProjectReference Include="Unity.InternalAPIEngineBridge.007.csproj">
       <Project>{53C6B1E2-12C0-B67B-A869-EFB6462063E8}</Project>
       <Name>Unity.InternalAPIEngineBridge.007</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
+      <Project>{B43B63A3-B464-BF8E-139E-7CC765A62B43}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.csproj">
       <Project>{C55AAC22-337C-5B07-B8EF-BA0C770860D9}</Project>
@@ -1011,10 +1019,6 @@
     <ProjectReference Include="Oculus.AudioManager.Utils.Editor.csproj">
       <Project>{ECF889F5-670E-411C-A2D3-8D3A3308609F}</Project>
       <Name>Oculus.AudioManager.Utils.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
-      <Project>{B43B63A3-B464-BF8E-139E-7CC765A62B43}</Project>
-      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
       <Project>{60865BF0-C9D0-2EED-7E9B-761DD9DB1BBD}</Project>
@@ -1184,6 +1188,10 @@
       <Project>{6F3AAC47-341F-D37E-76F4-8D5C576409CE}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Oculus.LipSync.Editor.csproj">
+      <Project>{26FA0B7C-B703-8445-9FF4-73649FC2A491}</Project>
+      <Name>Oculus.LipSync.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
       <Project>{AD4FF6D9-D242-4AC0-F592-A1ABC85E4669}</Project>
       <Name>Oculus.Platform</Name>
@@ -1191,6 +1199,10 @@
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
       <Project>{D2922A88-0378-AB16-2720-54F522C82191}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.LipSync.csproj">
+      <Project>{7BB855E2-A081-E2EF-7DBE-044992264C8B}</Project>
+      <Name>Oculus.LipSync</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.OpenXR.csproj">
       <Project>{D6420BBD-BD3C-7A38-0FAE-648E05A066B1}</Project>

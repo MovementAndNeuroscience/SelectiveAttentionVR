@@ -56,28 +56,28 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusSettings.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\InputSystem\DeviceLayouts.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\InputFocus.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\Device.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusDevelopment.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\FFR.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusPlugin.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusUsages.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\ColorScale.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusBoundary.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\RegisterUpdateCallback.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusLoader.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\OculusPerformance.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\InputSystem\DeviceLayouts.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\InputFocus.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\Device.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusDevelopment.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\FFR.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusPlugin.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusUsages.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\ColorScale.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusBoundary.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\RegisterUpdateCallback.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusPerformance.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x86\AudioPluginOculusSpatializer.dll" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\Unity.XR.Oculus.asmdef" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x64\AudioPluginOculusSpatializer.dll" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x86\OVRPlugin.dll" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x64\OculusXRPlugin.dll" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x64\OVRPlugin.dll" />
-    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.0\Runtime\x86\OculusXRPlugin.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x86\AudioPluginOculusSpatializer.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\Unity.XR.Oculus.asmdef" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x64\AudioPluginOculusSpatializer.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x86\OVRPlugin.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x64\OculusXRPlugin.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x64\OVRPlugin.dll" />
+    <None Include="Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\x86\OculusXRPlugin.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

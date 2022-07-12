@@ -62,8 +62,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\Control.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Undo\ApplyDefaultUndoAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\Invoker.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\CustomEditors\CustomTimelineEditorCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Utils\EditModeRippleUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\CustomEditors\CustomTimelineEditorCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Actions\MarkerAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Utils\EditModeMixUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\Sequence\TrackZoom.cs" />
@@ -267,8 +267,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Signals\SignalReceiverHeader.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Audio\AudioClipPropertiesDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\CustomEditors\ClipEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\TimelineEditorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\OverlayDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Window\TimelineEditorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\Snapping\IAttractable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\treeview\ItemGui\ISelectable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.6.4\Editor\Manipulators\HeaderSplitterManipulator.cs" />

@@ -809,6 +809,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Oculus.Voice.Demo.Player.csproj">
+      <Project>{D98CD8A9-BA2D-0A6B-B690-7DA777ED0AF9}</Project>
+      <Name>Oculus.Voice.Demo.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Player.csproj">
       <Project>{975B520D-4350-185B-7B91-E7C43E766229}</Project>
       <Name>Oculus.AudioManager.Player</Name>
@@ -888,6 +892,10 @@
     <ProjectReference Include="Oculus.Platform.Player.csproj">
       <Project>{4A107172-E5CE-8E6C-2595-3B985B78DDD5}</Project>
       <Name>Oculus.Platform.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.LipSync.Player.csproj">
+      <Project>{DB5D2918-F0FE-92C4-F5E1-4DBEA758468F}</Project>
+      <Name>Oculus.LipSync.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.OpenXR.Player.csproj">
       <Project>{0624231D-000B-146B-E41A-1AD5C8303132}</Project>
