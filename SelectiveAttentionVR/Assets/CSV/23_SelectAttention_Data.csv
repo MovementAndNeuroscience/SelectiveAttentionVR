@@ -1,0 +1,14 @@
+Visual ReactionTime;Visual Stimuli Onset Time;Visual Stimuli Offset Time;Visual Stimuli On Screen Time;Visual Presented Condition;Visual Answers;Visual Answer Codes;Audio Visual ReactionTime;Audio Visual Stimuli Onset Time;Audio Visual Stimuli Offset Time;Audio Visual Stimuli On Screen Time;Audio Visual Presented Condition;Audio Visual Answers;Audio Visual Answer Codes;Audio ReactionTime;Audio Stimuli Onset Time;Audio Stimuli Offset Time;Audio Stimuli On Screen Time;Audio Presented Condition;Audio Answers;Audio Answer Codes
+0,9599991;1,02;1,219999;0,1999998;Congruent;Correct;1;0,8799992;1,02;1,219999;0,1999998;Congruent;Incorrect;2;0,7399993;1,02;1,219999;0,1999998;Neutral;Correct;1
+0,8799992;6,739995;6,939994;0,1999998;Neutral;Correct;1;0,8399992;6,739995;6,939994;0,1999998;Incongruent;Correct;1;0,6999993;6,739995;6,939994;0,1999998;Neutral;Incorrect;2
+0,960022;12,4601;12,6601;0,2000046;Congruent;Incorrect;2;0,8600197;12,4601;12,6601;0,2000046;Neutral;Correct;1;0,9200211;12,4601;12,6601;0,2000046;Incongruent;Correct;1
+0,9000206;18,18023;18,38023;0,2000046;Neutral;Correct;1;0,8400192;18,18023;18,38023;0,2000046;Neutral;Incorrect;2;0,9800224;18,18023;18,38023;0,2000046;Congruent;Correct;1
+0,8800201;23,90036;24,10036;0,2000046;Congruent;Correct;1;0,8400192;23,90036;24,10036;0,2000046;Congruent;Correct;1;0,8200188;23,90036;24,10036;0,2000046;Incongruent;Correct;1
+0,7400169;29,62049;29,82049;0,2000046;Congruent;Correct;1;0,7400169;29,62049;29,82049;0,2000046;Congruent;Correct;1;0,9000206;29,62049;29,82049;0,2000046;Congruent;Correct;1
+0,7800179;35,34062;35,54062;0,2000046;Incongruent;Correct;1;0,8000183;35,34062;35,54062;0,2000046;Neutral;Correct;1;0,9200211;35,34062;35,54062;0,2000046;Congruent;Correct;1
+0,9200211;41,06075;41,26075;0,2000046;Incongruent;Correct;1;0,8400192;41,06075;41,26075;0,2000046;Incongruent;Correct;1;0,8600197;41,06075;41,26075;0,2000046;Incongruent;Correct;1
+0,700016;46,78088;46,98088;0,2000046;Neutral;Correct;1;1,060024;46,78088;46,98088;0,2000046;Incongruent;Correct;1;1,080025;46,78088;46,98088;0,2000046;Incongruent;Correct;1
+0,8400192;52,50101;52,70102;0,2000046;Incongruent;Correct;1;0,7400169;52,50101;52,70102;0,2000046;Neutral;Incorrect;2;1,080025;52,50101;52,70102;0,2000046;Congruent;Correct;1
+0,7600174;58,22114;58,42115;0,2000046;Neutral;Incorrect;2;0,8600197;58,22114;58,42115;0,2000046;Congruent;Correct;1;0,700016;58,22114;58,42115;0,2000046;Neutral;Incorrect;2
+1,07983;63,94127;64,14125;0,1999779;Incongruent;Incorrect;2;0,8998604;63,94127;64,14125;0,1999779;Incongruent;Correct;1;0,8998604;63,94127;64,14125;0,1999779;Neutral;Correct;1
+
