@@ -19,7 +19,7 @@ MonoBehaviour:
   handTrackingVersion: 2
   anchorSupport: 0
   renderModelSupport: 1
-  trackedKeyboardSupport: 1
+  trackedKeyboardSupport: 2
   disableBackups: 1
   enableNSCConfig: 1
   securityXmlPath: 
