@@ -18,60 +18,47 @@ public class FileSaver : MonoBehaviour
     {
         
     }
-   public void saveFile(string subjectID,float[] visRTs, float[] visOnsetTimes, float[] visOffsetTimes, float[] visStimuliOnScreenTime, string[] visPresentedConditions, string[] visAnswers, int[] visAnswerCodes,
-                float[] audVisRTs, float[] audVisOnsetTimes, float[] audVisOffsetTimes, float[] audVisStimuliOnScreenTimes, string[] audVisPresentedConditions, string[] audVisAnswers, int[] audVisAnswerCodes,
-                float[] audRTs, float[] audOnsetTimes, float[] audOffsetTimes, float[] audStimuliOnScreenTimes, string[] audPresentedConditions, string[] audAnswers, int[] audanswerCodes)
+    public void saveFile(string subjectId, int blockNo, 
+        float[] avb1_RTs, float[] avb1_OnTimes, float[] avb1_OffTimes, float[] avb1_FixOnTimes, float[] avb1_FixOffTimes, 
+        float[] avb1_BlankOnTimes, float[] avb1_BlankOffTimes, float[] avb1_FeedOnTimes, float[] avb1_FeedOffTimes, 
+        float[] avb1_stimOnScreenTimes, string[] avb1_presentedCond, string[] avb1_Answers, int[] avb1_AnswerCodes, string[] avb1_presentedModalities)
     {
         // Creating First row of titles manually..
-        string[] rowDataTemp = new string[21];
-        rowDataTemp[0] = "Visual ReactionTime";
-        rowDataTemp[1] = "Visual Stimuli Onset Time";
-        rowDataTemp[2] = "Visual Stimuli Offset Time";
-        rowDataTemp[3] = "Visual Stimuli On Screen Time";
-        rowDataTemp[4] = "Visual Presented Condition";
-        rowDataTemp[5] = "Visual Answers";
-        rowDataTemp[6] = "Visual Answer Codes";
-        rowDataTemp[7] = "Audio Visual ReactionTime";
-        rowDataTemp[8] = "Audio Visual Stimuli Onset Time";
-        rowDataTemp[9] = "Audio Visual Stimuli Offset Time";
-        rowDataTemp[10] = "Audio Visual Stimuli On Screen Time";
-        rowDataTemp[11] = "Audio Visual Presented Condition";
-        rowDataTemp[12] = "Audio Visual Answers";
-        rowDataTemp[13] = "Audio Visual Answer Codes";
-        rowDataTemp[14] = "Audio ReactionTime";
-        rowDataTemp[15] = "Audio Stimuli Onset Time";
-        rowDataTemp[16] = "Audio Stimuli Offset Time";
-        rowDataTemp[17] = "Audio Stimuli On Screen Time";
-        rowDataTemp[18] = "Audio Presented Condition";
-        rowDataTemp[19] = "Audio Answers";
-        rowDataTemp[20] = "Audio Answer Codes";
+        string[] rowDataTemp = new string[14];
+        rowDataTemp[0] = "ReactionTime Block" + blockNo;
+        rowDataTemp[1] = "Stimuli Onset Time Block" + blockNo;
+        rowDataTemp[2] = "Stimuli Offset Time Block" + blockNo;
+        rowDataTemp[3] = "Fixation Cross Onset Time Block" + blockNo;
+        rowDataTemp[4] = "Fixation Cross Offset Time Block" + blockNo;
+        rowDataTemp[5] = "Blank Screen Onset Time Block" + blockNo;
+        rowDataTemp[6] = "Blank Screen Offset Time Block" + blockNo;
+        rowDataTemp[7] = "Feedback Onset Time Block" + blockNo;
+        rowDataTemp[8] = "Feedback Offset Time Block" + blockNo;
+        rowDataTemp[9] = "Stimuli On Screen Time Block" + blockNo;
+        rowDataTemp[10] = "Presented Condition Block" + blockNo;
+        rowDataTemp[11] = "Answers Block" + blockNo;
+        rowDataTemp[12] = "Answer Codes Block" + blockNo;
+        rowDataTemp[13] = "Distractor Modality Block" + blockNo;
         rowData.Add(rowDataTemp);
 
         // You can add up the values in as many cells as you want.
-        for (int i = 0; i < visRTs.Length; i++)
+        for (int i = 0; i < avb1_RTs.Length; i++)
         {
-            rowDataTemp = new string[21];
-            rowDataTemp[0] = visRTs[i].ToString();
-            rowDataTemp[1] = visOnsetTimes[i].ToString();
-            rowDataTemp[2] = visOffsetTimes[i].ToString();
-            rowDataTemp[3] = visStimuliOnScreenTime[i].ToString();
-            rowDataTemp[4] = visPresentedConditions[i].ToString();
-            rowDataTemp[5] = visAnswers[i].ToString();
-            rowDataTemp[6] = visAnswerCodes[i].ToString();
-            rowDataTemp[7] = audVisRTs[i].ToString();
-            rowDataTemp[8] = audVisOnsetTimes[i].ToString();
-            rowDataTemp[9] = audVisOffsetTimes[i].ToString();
-            rowDataTemp[10] = audVisStimuliOnScreenTimes[i].ToString();
-            rowDataTemp[11] = audVisPresentedConditions[i].ToString();
-            rowDataTemp[12] = audVisAnswers[i].ToString();
-            rowDataTemp[13] = audVisAnswerCodes[i].ToString();
-            rowDataTemp[14] = audRTs[i].ToString();
-            rowDataTemp[15] = audOnsetTimes[i].ToString();
-            rowDataTemp[16] = audOffsetTimes[i].ToString();
-            rowDataTemp[17] = audStimuliOnScreenTimes[i].ToString();
-            rowDataTemp[18] = audPresentedConditions[i].ToString();
-            rowDataTemp[19] = audAnswers[i].ToString();
-            rowDataTemp[20] = audanswerCodes[i].ToString();
+            rowDataTemp = new string[14];
+            rowDataTemp[0] = avb1_RTs[i].ToString();
+            rowDataTemp[1] = avb1_OnTimes[i].ToString();
+            rowDataTemp[2] = avb1_OffTimes[i].ToString();
+            rowDataTemp[3] = avb1_FixOnTimes[i].ToString();
+            rowDataTemp[4] = avb1_FixOffTimes[i].ToString();
+            rowDataTemp[5] = avb1_BlankOnTimes[i].ToString();
+            rowDataTemp[6] = avb1_BlankOffTimes[i].ToString();
+            rowDataTemp[7] = avb1_FeedOnTimes[i].ToString();
+            rowDataTemp[8] = avb1_FeedOffTimes[i].ToString();
+            rowDataTemp[9] = avb1_stimOnScreenTimes[i].ToString();
+            rowDataTemp[10] = avb1_presentedCond[i].ToString();
+            rowDataTemp[11] = avb1_Answers[i].ToString();
+            rowDataTemp[12] = avb1_AnswerCodes[i].ToString();
+            rowDataTemp[13] = avb1_presentedModalities[i].ToString();
             rowData.Add(rowDataTemp);
         }
 
@@ -91,7 +78,7 @@ public class FileSaver : MonoBehaviour
             sb.AppendLine(string.Join(delimiter, output[index]));
 
 
-        string filePath = getPath(subjectID);
+        string filePath = getPath(subjectId);
 
         StreamWriter outStream = File.CreateText(filePath);
         outStream.WriteLine(sb);

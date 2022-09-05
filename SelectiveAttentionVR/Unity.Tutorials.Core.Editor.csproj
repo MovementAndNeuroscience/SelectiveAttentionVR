@@ -132,9 +132,9 @@
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\Property Drawers\FlushChildrenDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\FutureObjectReference.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\StringExtensions.cs" />
-    <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\Criteria\PropertyModificationCriterion.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\ThirdParty\SerializableCallback\InvokableEvent.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\Criteria\InstantiatePrefabCriterion.cs" />
+    <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\Criteria\PropertyModificationCriterion.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\Criteria\SceneViewCameraMovedCriterion.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\AnalyticsHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.learn.iet-framework@2.2.1\Editor\ObjectReference.cs" />

@@ -117,7 +117,7 @@ public class StimuliControllerHelper : MonoBehaviour
 
     public (bool,bool, float[], string[], int[], bool) RecordReaction(string targetLetter, bool enableHappy, bool enableSad, float[] reactionTimes, float[] stimuliOnsetTimes, int stimuliCounter, float grandClock, string[] answers, int[] answer_codes, bool reactionTimeEnabled)
     {
-        if (Input.GetMouseButtonDown(0) && targetLetter == "p")
+        if (Input.GetKeyDown(KeyCode.LeftAlt) && targetLetter == "p")
         {
             enableHappy = true;
             reactionTimes[stimuliCounter] = grandClock - stimuliOnsetTimes[stimuliCounter];
@@ -127,7 +127,7 @@ public class StimuliControllerHelper : MonoBehaviour
             return (enableHappy,enableSad, reactionTimes, answers, answer_codes, reactionTimeEnabled); 
         }
 
-        else if (Input.GetMouseButtonDown(0) && targetLetter == "b")
+        else if (Input.GetKeyDown(KeyCode.LeftAlt) && targetLetter == "b")
         {
             enableSad = true;
             reactionTimes[stimuliCounter] = grandClock - stimuliOnsetTimes[stimuliCounter];
@@ -136,7 +136,7 @@ public class StimuliControllerHelper : MonoBehaviour
             reactionTimeEnabled = false;
             return (enableHappy, enableSad, reactionTimes, answers, answer_codes, reactionTimeEnabled);
         }
-        else if (Input.GetMouseButtonDown(1) && targetLetter == "b")
+        else if (Input.GetKeyDown(KeyCode.RightAlt) && targetLetter == "b")
         {
             enableHappy = true;
             reactionTimes[stimuliCounter] = grandClock - stimuliOnsetTimes[stimuliCounter];
@@ -146,7 +146,7 @@ public class StimuliControllerHelper : MonoBehaviour
             return (enableHappy, enableSad, reactionTimes, answers, answer_codes, reactionTimeEnabled);
         }
 
-        else if (Input.GetMouseButtonDown(1) && targetLetter == "p")
+        else if (Input.GetKeyDown(KeyCode.RightAlt) && targetLetter == "p")
         {
             enableSad = true;
             reactionTimes[stimuliCounter] = grandClock - stimuliOnsetTimes[stimuliCounter];

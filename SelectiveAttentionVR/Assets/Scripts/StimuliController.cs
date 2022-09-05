@@ -41,11 +41,18 @@ public class StimuliController : MonoBehaviour
     public GameObject faster;
     public GameObject happyFace;
     public GameObject sadFace;
+    public GameObject canvas; 
 
     public static int maxReactiontimes = 12;
     public float[] reactionTimes = new float[maxReactiontimes];
+    public float[] fixationCrossOnsetTimes = new float[maxReactiontimes];
+    public float[] fixationCrossOffsetTimes = new float[maxReactiontimes];
     public float[] stimuliOnsetTimes = new float[maxReactiontimes];
     public float[] stimuliOffsetTimes = new float[maxReactiontimes];
+    public float[] blankScreenOnsetTimes = new float[maxReactiontimes];
+    public float[] blankScreenOffsetTimes = new float[maxReactiontimes];
+    public float[] feedbackOnsetTimes = new float[maxReactiontimes];
+    public float[] feedbackOffsetTimes = new float[maxReactiontimes];
     public float[] stimuliTimes = new float[maxReactiontimes];
     public string[] presentedConditions = new string[maxReactiontimes];
     public string[] answers = new string[maxReactiontimes];
@@ -100,12 +107,14 @@ public class StimuliController : MonoBehaviour
             fillerposes.Add("DownRight");
 
             x_fixation.SetActive(true);
+            fixationCrossOnsetTimes[stimuliCounter] = grandClock; 
             enableFixation = false; 
         }
 
         else if (timer > 1.0f && timer < 1.2f && enableStimuli)
         {
             x_fixation.SetActive(false);
+            fixationCrossOffsetTimes[stimuliCounter] = grandClock;
 
             var randpos = Random.Range(0, fillerposes.Count);
             var targetpos = fillerposes[randpos];
@@ -131,25 +140,29 @@ public class StimuliController : MonoBehaviour
             enableStimuli = false; 
 
         }
-        else if (timer > 1.2f && timer < 5.2f && enableBlankScreen)
+        else if (timer > 1.2f && timer < 6.2f && enableBlankScreen)
         {
             ShowBlankScreen();
+            blankScreenOnsetTimes[stimuliCounter] = grandClock; 
         }
 
-        if (timer > 1.0f && timer < 5.2f && reactionTimeEnabled)
+        if (timer > 1.0f && timer < 6.2f && reactionTimeEnabled)
         {
             RecordReaction();
         }
 
-        else if (timer > 5.2f && timer < 5.7f && enableFeedback)
+        else if (timer > 6.2f && timer < 6.7f && enableFeedback)
         {
+            blankScreenOffsetTimes[stimuliCounter] = grandClock;
             ProvideFeedback();
+            feedbackOnsetTimes[stimuliCounter] = grandClock; 
         }
-        else if (timer > 5.7f && !allReactionTimesFound)
+        else if (timer > 6.7f && !allReactionTimesFound)
         {
             faster.SetActive(false);
             happyFace.SetActive(false); 
             sadFace.SetActive(false);
+            feedbackOffsetTimes[stimuliCounter] = grandClock; 
 
             stimuliCounter ++;
             if(maxReactiontimes == stimuliCounter)
@@ -171,13 +184,14 @@ public class StimuliController : MonoBehaviour
             
             if (allReactionTimesFound)
             {
-                timer = 6.5f;
+                timer = 7.5f;
             }
         }
     }
 
     private void ProvideFeedback()
     {
+        canvas.SetActive(true);
         if (!enableHappy && !enableSad)
         {
             answer_codes[stimuliCounter] = 0;
@@ -207,6 +221,7 @@ public class StimuliController : MonoBehaviour
     {
         (stimuliOffsetTimes, stimuliTimes, enableBlankScreen) = GetComponent<StimuliControllerHelper>().ShowBlankScreen(p_target, b_target, p_distractor,
         b_distractor, g_distractor, h_filler, l_filler, y_filler, stimuliOffsetTimes, stimuliOnsetTimes, stimuliTimes, stimuliCounter, grandClock);
+        canvas.SetActive(false);
     }
 
     private void PositioningFillers()
@@ -269,6 +284,18 @@ public class StimuliController : MonoBehaviour
     { return stimuliOnsetTimes;}
     public float[] GetOffSetTimes()
     {return stimuliOffsetTimes;}
+    public float[] GetFixationOnSetTimes()
+    { return fixationCrossOnsetTimes; }
+    public float[] GetFixationOffSetTimes()
+    { return fixationCrossOffsetTimes; }
+    public float[] GetBlankOnSetTimes()
+    { return blankScreenOnsetTimes; }
+    public float[] GetBlankOffSetTimes()
+    { return blankScreenOffsetTimes; }
+    public float[] GetFeedbackOnSetTimes()
+    { return feedbackOnsetTimes; }
+    public float[] GetFeedbackOffSetTimes()
+    { return feedbackOffsetTimes; }
     public float[] GetStimuliScreenTimes()
     {return stimuliTimes;}
     public string[] GetPresentedConditions()
