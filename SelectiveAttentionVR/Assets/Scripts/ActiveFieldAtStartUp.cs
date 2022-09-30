@@ -16,6 +16,10 @@ public class ActiveFieldAtStartUp : MonoBehaviour
     void Update()
     {
         var inputfield = GetComponent<TMP_InputField>();
+        if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            inputfield.text += "0";
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             inputfield.text += "1"; 
